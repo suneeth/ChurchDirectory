@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="STOCI.App.ContactView"
+     xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True"
+>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+              
+          <Image Source="{Binding SelectedContact.Image}" 
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                               
+                                  Aspect="AspectFill"/>
+            
+        <Label Text="{Binding SelectedContact.FullName}" ></Label>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
