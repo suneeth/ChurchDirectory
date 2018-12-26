@@ -36,27 +36,28 @@ namespace STOCI.App
         public ContactViewModel()
         {
 
-            LaunchMapsCommand = new Command<Contact>((model) => LaunchMap(model));
-            CallCommand = new Command<Contact>((model) => CallPhone(model));
-            MessageCommand = new Command<Contact>((model) => SendMessage(model));
+            LaunchMapsCommand = new Command(() => LaunchMap());
+            CallCommand = new Command(() => CallPhone());
+            MessageCommand = new Command(() => SendMessage());
         }
 
-        private void SendMessage(Contact model)
+        private void SendMessage()
         {
             var smsSender = CrossMessaging.Current.SmsMessenger;
             if (smsSender.CanSendSms)
-                smsSender.SendSms(model.PhoneNumber);
+                smsSender.SendSms(_selectedcontact.PhoneNumber);
         }
 
-        private void CallPhone(Contact model)
+        private void CallPhone()
         {
             var PhoneCallTask = CrossMessaging.Current.PhoneDialer;
             if (PhoneCallTask.CanMakePhoneCall)
-                PhoneCallTask.MakePhoneCall(model.PhoneNumber);
+                PhoneCallTask.MakePhoneCall(_selectedcontact.PhoneNumber);
         }
 
-        private void LaunchMap(Contact contact)
+        private void LaunchMap()
         {
+            var contact = _selectedcontact;
             var request = "";
             switch (Device.RuntimePlatform)
             {

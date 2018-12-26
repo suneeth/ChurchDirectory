@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView"
-             xmlns:effects="clr-namespace:STOCI.App" 
+             xmlns:effects="clr-namespace:STOCI.App"
              xmlns:behaviors="clr-namespace:STOCI.App"
               xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" >
    <StackLayout>
@@ -14,9 +14,9 @@
                 <ListView ItemsSource="{Binding Contacts}"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="True"
-                   IsGroupingEnabled="True"
+                  IsGroupingEnabled="True"
                   GroupDisplayBinding="{Binding Key}"
-            GroupShortNameBinding="{Binding Key}"
+                  GroupShortNameBinding="{Binding Key}"
                   Grid.ColumnSpan="2">
                <ListView.Behaviors>
                     <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ContactTappedCommand}"></behaviors:EventToCommandBehavior>
@@ -31,7 +31,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding Image}" 
                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
+                                   VerticalOptions="Center"
                                    WidthRequest="60"
                                    HeightRequest="60"
                                    Aspect="AspectFill"/>
