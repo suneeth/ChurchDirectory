@@ -11,6 +11,12 @@ namespace STOCI.App
         public string State { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
+
+
+        public  override string ToString()
+        {
+           return $"{Street} \n{City},{State},{Zip}";
+        }
     }
 
     public class Contact

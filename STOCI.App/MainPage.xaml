@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView"
              xmlns:effects="clr-namespace:STOCI.App"
-             xmlns:behaviors="clr-namespace:STOCI.App"
-              xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" >
+             xmlns:behaviors="clr-namespace:STOCI.App" 
+              xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" Title="Contacts">
    <StackLayout>
        <SearchBar Placeholder="Search">
             <SearchBar.Effects>
@@ -25,7 +25,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid ColumnSpacing="10" Padding="10">
-                            <Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions> 
                                 <ColumnDefinition Width="60"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>

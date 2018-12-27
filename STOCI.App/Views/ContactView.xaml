@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="STOCI.App.ContactView"
-     xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True">
+             xmlns:local="clr-namespace:STOCI.App"
+     xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" Title="{Binding SelectedContact.FirstName}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:AddressToTextConverter x:Key="addressToText" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
     
          <Grid>
@@ -24,18 +30,13 @@
                 <StackLayout Orientation="Horizontal" Padding="20">
                     <Label Text="address" Style="{StaticResource LinkStyle}"></Label>
                     <StackLayout HorizontalOptions="EndAndExpand">
-                       <Label Text="{Binding SelectedContact.Address.Street}" HorizontalOptions="Start"></Label>
-                       <Label Text="{Binding SelectedContact.Address.City}" HorizontalOptions="Start"></Label>
-                       <Label Text="{Binding SelectedContact.Address.State}" HorizontalOptions="Start"></Label>
-                       <Label Text="{Binding SelectedContact.Address.Zip}" HorizontalOptions="Start"></Label>
-
+                        <Button Text="{Binding SelectedContact.Address.Street}" Command="{Binding LaunchMapsCommand}"></Button>
                     </StackLayout>
                     
                 </StackLayout>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                                            
                 <StackLayout Orientation="Horizontal" Padding="20,20,10,20">
-                    <Label Text="household" Style="{StaticResource LinkStyle}"></Label>
                     <Label Text="{Binding SelectedContact.FamilyMembers}"  Style="{StaticResource SubItemStyle}" HorizontalOptions="EndAndExpand"></Label>
                 </StackLayout>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />

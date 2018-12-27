@@ -14,20 +14,18 @@ namespace STOCI.App
               typeof(ViewModelLocator), default(bool),
               propertyChanged: OnAutoWireViewModelChanged);
 
-          private ILifetimeScope _rootScope;
+          private static ILifetimeScope _rootScope;
 
-
-        public ViewModelLocator()
+        public static void RegisterDependencies()
         {
             var builder = new ContainerBuilder();
             var assemblies = new[] { Assembly.GetExecutingAssembly() };
 
-             builder.RegisterAssemblyTypes(assemblies)
-             .SingleInstance().AsImplementedInterfaces().AsSelf();
-               _rootScope = builder.Build();
+            builder.RegisterAssemblyTypes(assemblies)
+            .SingleInstance().AsImplementedInterfaces().AsSelf();
+            _rootScope = builder.Build();
         }
 
-         public static ViewModelLocator Instance { get; private set; } = new ViewModelLocator();
 
         public static bool GetAutoWireViewModel(BindableObject bindable)
         {
@@ -58,14 +56,14 @@ namespace STOCI.App
                 {
                     return;
                 }
-                var viewModel = Instance._rootScope.Resolve(viewModelType);
+                var viewModel = _rootScope.Resolve(viewModelType);
                 view.BindingContext = viewModel;
             }
         }
 
-        public  T Resolve<T>()
+        public static T Resolve<T>()
         {
-            return Instance._rootScope.Resolve<T>();
+            return _rootScope.Resolve<T>();
         }
     }
 

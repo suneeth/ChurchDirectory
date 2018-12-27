@@ -10,8 +10,9 @@ namespace STOCI.App
 {
     public class ContactViewModel:BaseViewModel
     {
+        private string _address;
 
-       private Contact _selectedcontact { get; set; }
+        private Contact _selectedcontact { get; set; }
         public ICommand LaunchMapsCommand { get; private set; }
         public ICommand CallCommand { get; private set; }
         public ICommand MessageCommand { get; private set; }
@@ -26,6 +27,8 @@ namespace STOCI.App
                 RaisePropertyChanged(nameof(SelectedContact));
             }
         }
+
+     
 
 
         public override async Task InitializeAsync(object contact)

@@ -19,12 +19,13 @@ namespace STOCI.App
 
         private async Task InitializeNavigation()
         {
-            var navigationService = ViewModelLocator.Instance.Resolve<INavigationService>();
+            var navigationService = ViewModelLocator.Resolve<INavigationService>();
             await navigationService.InitializeAsync();
         }
 
         private void InitializeApp()
         {
+            ViewModelLocator.RegisterDependencies();
         }
 
         protected override void OnStart()
