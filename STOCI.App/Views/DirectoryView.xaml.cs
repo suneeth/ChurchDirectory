@@ -10,9 +10,9 @@ namespace STOCI.App
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
-    public partial class MainPageView : ContentPage
+    public partial class DirectoryView : ContentPage
     {
-        public MainPageView()
+        public DirectoryView()
         {
             InitializeComponent();
         }

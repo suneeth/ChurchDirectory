@@ -18,6 +18,9 @@
     <PackageReference Include="Autofac" Version="4.8.1" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Images\stthomas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Views\ContactView.xaml" />
     <None Include="Views\StociNavigationPage.xaml" />
   </ItemGroup>
@@ -25,5 +28,19 @@
     <Folder Include="Effects\" />
     <Folder Include="Converters\" />
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">
+      <DependentUpon>Directory.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Directory.xaml.cs">
+      <DependentUpon>DirectoryView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\DirectoryView.xaml.cs">
+      <DependentUpon>DirectoryView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

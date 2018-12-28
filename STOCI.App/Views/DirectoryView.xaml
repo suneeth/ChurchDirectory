@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView"
+             xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.DirectoryView"
              xmlns:effects="clr-namespace:STOCI.App"
              xmlns:behaviors="clr-namespace:STOCI.App" 
-              xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" Title="Contacts">
+              xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" 
+             Title="Contacts">
    <StackLayout>
        <SearchBar Placeholder="Search">
             <SearchBar.Effects>

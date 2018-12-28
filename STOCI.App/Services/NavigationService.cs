@@ -12,6 +12,8 @@ namespace STOCI.App
 
         protected Application CurrentApplication => Application.Current;
 
+        public static StociNavigationPage StociNavigation;
+
 
         public NavigationService()
         {
@@ -76,11 +78,7 @@ namespace STOCI.App
         protected virtual async Task InternalNavigateToAsync(Type viewModelType, object parameter)
         {
             var page = CreatePage(viewModelType, parameter);
-            if(page is MainPageView)
-            {
-                CurrentApplication.MainPage = page;
-
-            }
+           
 
             //if (page is MainView || page is RegistrationView)
             //{
@@ -125,17 +123,7 @@ namespace STOCI.App
             //    }
             //}
 
-
-            var navigationPage = CurrentApplication.MainPage as StociNavigationPage;
-
-                if (navigationPage != null)
-                {
-                    await navigationPage.PushAsync(page);
-                }
-                else
-                {
-                    CurrentApplication.MainPage = new StociNavigationPage(page);
-                }
+             App.Nav.PushAsync(page);
 
             await (page.BindingContext as BaseViewModel).InitializeAsync(parameter);
         }
@@ -169,8 +157,8 @@ namespace STOCI.App
         private void CreatePageViewModelMappings()
         {
 
-            //_mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             _mappings.Add(typeof(MainPageViewModel), typeof(MainPageView));
+            _mappings.Add(typeof(DirectoryViewModel), typeof(DirectoryView));
             _mappings.Add(typeof(ContactViewModel), typeof(ContactView));
             //_mappings.Add(typeof(HomeViewModel), typeof(HomeView));
             //_mappings.Add(typeof(CheckoutViewModel), typeof(CheckoutView));

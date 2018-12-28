@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="STOCI.App.OurChurch" Title="Our Church" >
+             x:Class="STOCI.App.OurChurch" Title="Our Church" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true" >
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label Text="St Thomas Orthodox Church, Warren,MI" Margin="10"></Label>
+            <Image Source="http://www.stthomasdetroit.org/wp-content/uploads/2017/01/584901096_4s6bn-L.jpg" Aspect="Fill" Grid.Row="1"></Image>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -65,10 +65,10 @@ namespace STOCI.App
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    request = string.Format("http://maps.apple.com/maps?q={0}", contact.Address.Street.Replace(' ', '+'));
+                    request = string.Format("http://maps.apple.com/maps?q={0}", contact.Address.ToString().Replace(' ', '+'));
                     break;
                 case Device.Android:
-                    request = string.Format("geo:0,0?q={0}", contact.Address.Street);
+                    request = string.Format("geo:0,0?q={0}", contact.Address.ToString());
                     break;
 
             }

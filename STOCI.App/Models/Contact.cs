@@ -15,7 +15,7 @@ namespace STOCI.App
 
         public  override string ToString()
         {
-           return $"{Street} \n{City},{State},{Zip}";
+           return $"{Street} {City} {State} {Zip}";
         }
     }
 

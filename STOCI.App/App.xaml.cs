@@ -8,13 +8,20 @@ namespace STOCI.App
 {
     public partial class App : Application
     {
+        public static INavigation Nav { get; set; }
         public App()
         {
             InitializeComponent();
-
             InitializeApp();
 
-            InitializeNavigation();
+            Application.Current.MainPage = new MainPageView();
+
+
+            var myNavigationPage = new NavigationPage(new DirectoryView());
+            Nav = myNavigationPage.Navigation;
+
+
+            //InitializeNavigation();
         }
 
         private async Task InitializeNavigation()
