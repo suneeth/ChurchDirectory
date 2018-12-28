@@ -4,10 +4,12 @@
             xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView">
     
     <local:OurChurch></local:OurChurch>
+    <local:Organizations></local:Organizations>
     <NavigationPage Title="Directory">
         <x:Arguments>
            <local:DirectoryView></local:DirectoryView>
         </x:Arguments>
     </NavigationPage>
+    <local:MyProfile></local:MyProfile>
     
  </TabbedPage>

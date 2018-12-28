@@ -42,5 +42,8 @@
       <DependentUpon>DirectoryView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Organizations.xaml.cs">
+      <DependentUpon>Organizations.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -19,42 +19,51 @@
                 <Image Source="http://www.mailsandforwards.com/wp-content/uploads/beautiful-family-poem.jpg" Aspect="AspectFit"></Image>
             </ContentView>
             <StackLayout Grid.Row="1" Padding="10">
-                    <Label Text="{Binding SelectedContact.FullName}" Style="{StaticResource PageHeaderStyle}"></Label>
+                    <Label Text="{Binding SelectedContact.FullName}" 
+                           Style="{StaticResource PageHeaderStyle}">
+                    </Label>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="{Binding SelectedContact.PhoneNumber}" FontSize="{StaticResource SmallFontSize}" VerticalTextAlignment="Center"></Label>
+                    <Label 
+                           Text="{Binding SelectedContact.PhoneNumber}" 
+                           FontSize="{StaticResource SmallFontSize}" 
+                           VerticalTextAlignment="Center">
+                    </Label>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                    <Button Text="&#xf075;"  FontFamily="{StaticResource FontAwesome}"
-                             BorderColor="Transparent"
-                             BackgroundColor="Transparent"
-                            Command="{Binding MessageCommand}" ></Button>
-                   <Button Text="&#xf095;"  FontFamily="{StaticResource FontAwesome}"
-                             BorderColor="Transparent"
-                             BackgroundColor="Transparent"
-                           Command="{Binding CallCommand}" ></Button>
+                    <Button Text="{StaticResource ChatIcon}"  
+                            Style="{StaticResource IconButton}"
+                            Command="{Binding MessageCommand}" >
+                    </Button>
+                   <Button Text="{StaticResource PhoneIcon}" 
+                           Style="{StaticResource IconButton}"
+                           Command="{Binding CallCommand}" >
+                   </Button>
                    </StackLayout>
                 </StackLayout>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                 
                 <StackLayout Orientation="Horizontal" >
-                   <StackLayout Orientation="Vertical">
-                   <Label Text="{Binding SelectedContact.Address.Street}" FontSize="{StaticResource SmallFontSize}"></Label>
-                  <Label Text="{Binding SelectedContact.Address.City}" FontSize="{StaticResource SmallFontSize}"></Label>
-                  <Label Text="{Binding SelectedContact.Address.State}" FontSize="{StaticResource SmallFontSize}"></Label>
-                  <Label Text="{Binding SelectedContact.Address.Zip}" FontSize="{StaticResource SmallFontSize}"></Label>
 
-                    </StackLayout>
-              
+                  <Label Text="{Binding SelectedContact.Address,Converter={StaticResource addressToText}}" 
+                         FontSize="{StaticResource SmallFontSize}" 
+                         VerticalTextAlignment="Center">
+                  </Label>              
 
                     <StackLayout HorizontalOptions="EndAndExpand">
-                        <Button Text="&#xf279;" FontFamily="{StaticResource FontAwesome}" Command="{Binding LaunchMapsCommand}"></Button>
+                        <Button Text="{StaticResource MapIcon}" 
+                                Style="{StaticResource IconButton}"
+                                Command="{Binding LaunchMapsCommand}">
+                        </Button>
                     </StackLayout>
                     
                 </StackLayout>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                                            
                 <StackLayout Orientation="Horizontal" Padding="20,20,10,20">
-                    <Label Text="{Binding SelectedContact.FamilyMembers}"  Style="{StaticResource SubItemStyle}" HorizontalOptions="EndAndExpand"></Label>
+                    <Label Text="{Binding SelectedContact.FamilyMembers}"  
+                           Style="{StaticResource SubItemStyle}" 
+                           HorizontalOptions="EndAndExpand">
+                    </Label>
                 </StackLayout>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
   

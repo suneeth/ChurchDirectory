@@ -10,11 +10,6 @@ namespace STOCI.App
         public MainPageView()
         {
             InitializeComponent();
-            //var page = new NavigationPage(new DirectoryView());
-            //page.Title = "Directory";
-            //Children.Add(new OurChurch());
-            //Children.Add(page);
-
         }
 
 

@@ -11,7 +11,7 @@ namespace STOCI.App
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var address = (Address)value;
-            return $"{address.Street} \n{address.City},{address.State},{address.Zip}";
+            return $"{address.Street} \n{address.City} {address.State} {address.Zip}";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

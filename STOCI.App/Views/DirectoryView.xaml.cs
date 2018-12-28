@@ -10,11 +10,15 @@ namespace STOCI.App
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
-    public partial class DirectoryView : ContentPage
+    public partial class DirectoryView : ContentPage,ITabPage
     {
         public DirectoryView()
         {
             InitializeComponent();
         }
+
+        public string TabIcon => "\uf0c0";
+
+        public string SelectedTabIcon => "\uf0c0";
     }
 }

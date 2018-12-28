@@ -96,6 +96,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NoBorderSearchBarControl.cs" />
+    <Compile Include="TabIconHelpers\ImageHelper.cs" />
+    <Compile Include="TabIconHelpers\TabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -172,5 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ChurchIcon.imageset\" />
+    <Folder Include="TabIconHelpers\" />
   </ItemGroup>
 </Project>

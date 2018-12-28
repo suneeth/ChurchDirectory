@@ -25,6 +25,10 @@
                 <On Platform="Android, UWP, WinRT, WinPhone" Value="9" />
             </OnPlatform>
             
+            <x:String x:Key="PhoneIcon">&#xf095;</x:String>
+            <x:String x:Key="ChatIcon">&#xf075;</x:String>
+            <x:String x:Key="MapIcon">&#xf279;</x:String>
+
             
             <Color x:Key="BethanyPurple">#a594c1</Color>
             <Color x:Key="HeaderGrey">Black</Color>
@@ -32,6 +36,13 @@
             <Color x:Key="LightGrey">#cccccc</Color>
             <Color x:Key="EntryGrey">Gray</Color>
             <Color x:Key="LightForeground">White</Color>
+            
+            
+            <Style x:Key="IconButton" TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"></Setter>
+                <Setter Property="BorderColor" Value="Transparent"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+            </Style>
             
             
             <Style x:Key="PageHeaderStyle" TargetType="{x:Type Label}">
