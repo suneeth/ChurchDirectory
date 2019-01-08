@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.DirectoryView"
              xmlns:effects="clr-namespace:STOCI.App"
              xmlns:behaviors="clr-namespace:STOCI.App" 
+             xmlns:circleImage="clr_namespace:Refractored.MvvmHelpers"
               xmlns:utility="clr-namespace:STOCI.App" utility:ViewModelLocator.AutoWireViewModel="True" 
              Title="Contacts">
+ 
    <StackLayout>
        <SearchBar Placeholder="Search">
             <SearchBar.Effects>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="STOCI.App.EditProfileView">
+   <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Save"  Order="Primary" Priority="1" Command="{Binding SaveCommand}"  />
+     </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+    
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ContentView  BackgroundColor="Gray">
+                <Image Source="http://www.mailsandforwards.com/wp-content/uploads/beautiful-family-poem.jpg" Aspect="AspectFit"></Image>
+            </ContentView>
+            <StackLayout Grid.Row="1" Padding="10">
+                    <Entry Text="{Binding SelectedContact.FullName}" 
+                           Style="{StaticResource PageHeaderStyle}">
+                    </Entry>
+            <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
+                <StackLayout Orientation="Horizontal">
+                    <Entry 
+                           Text="{Binding SelectedContact.PhoneNumber}" 
+                           FontSize="{StaticResource SmallFontSize}" 
+                           >
+                    </Entry>
+             
+                </StackLayout>
+            <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
+                
+                <StackLayout Orientation="Horizontal" >
+
+                  <Entry Text="{Binding SelectedContact.Address}" 
+                         FontSize="{StaticResource SmallFontSize}" 
+                         >
+                  </Entry>              
+
+               
+                    
+                </StackLayout>
+            <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
+                                           
+                <StackLayout Orientation="Horizontal" Padding="20,20,10,20">
+                    <Entry Text="{Binding SelectedContact.FamilyMembers}"  
+                           Style="{StaticResource SubItemStyle}" 
+                           >
+                    </Entry>
+                </StackLayout>
+            <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
+  
+            </StackLayout>
+         </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
+

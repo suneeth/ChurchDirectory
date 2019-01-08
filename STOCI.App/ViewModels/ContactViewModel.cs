@@ -17,6 +17,9 @@ namespace STOCI.App
         public ICommand CallCommand { get; private set; }
         public ICommand MessageCommand { get; private set; }
 
+        private readonly INavigationService _navigationService;
+
+
 
         public Contact SelectedContact
         {
@@ -36,13 +39,16 @@ namespace STOCI.App
             SelectedContact = (Contact)contact;
         }
 
-        public ContactViewModel()
+        public ContactViewModel(INavigationService navigationService)
         {
 
             LaunchMapsCommand = new Command(() => LaunchMap());
             CallCommand = new Command(() => CallPhone());
             MessageCommand = new Command(() => SendMessage());
+            _navigationService = navigationService;
         }
+
+     
 
         private void SendMessage()
         {

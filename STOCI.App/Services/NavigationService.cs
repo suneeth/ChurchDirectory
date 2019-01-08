@@ -63,6 +63,11 @@ namespace STOCI.App
             return InternalNavigateToAsync(viewModelType, parameter);
         }
 
+        public Task ShowModalAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase
+        {
+            return InternalShowModalAsync(typeof(TViewModel), parameter);
+        }
+
         public Task PopToRootAsync()
         {
             throw new NotImplementedException();
@@ -74,55 +79,26 @@ namespace STOCI.App
         }
 
 
+        protected virtual async Task InternalShowModalAsync(Type viewModelType, object parameter)
+        {
+            var page = CreatePage(viewModelType, parameter);
+            await App.Nav.PushModalAsync(new NavigationPage(page));
+            await (page.BindingContext as BaseViewModel).InitializeAsync(parameter);
+
+        }
+
+        public async Task DismissModalAsync()
+        {
+            await App.Nav.PopModalAsync();
+        }
+
 
         protected virtual async Task InternalNavigateToAsync(Type viewModelType, object parameter)
         {
             var page = CreatePage(viewModelType, parameter);
            
 
-            //if (page is MainView || page is RegistrationView)
-            //{
-            //    CurrentApplication.MainPage = page;
-            //}
-            //else if (page is LoginView)
-            //{
-            //    CurrentApplication.MainPage = page;
-            //}
-            //else if (CurrentApplication.MainPage is MainView)
-            //{
-            //    var mainPage = CurrentApplication.MainPage as MainView;
-
-            //    if (mainPage.Detail is BethanyNavigationPage navigationPage)
-            //    {
-            //        var currentPage = navigationPage.CurrentPage;
-
-            //        if (currentPage.GetType() != page.GetType())
-            //        {
-            //            await navigationPage.PushAsync(page);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        navigationPage = new BethanyNavigationPage(page);
-            //        mainPage.Detail = navigationPage;
-            //    }
-
-            //    mainPage.IsPresented = false;
-            //}
-            //else
-            //{
-            //    var navigationPage = CurrentApplication.MainPage as BethanyNavigationPage;
-
-            //    if (navigationPage != null)
-            //    {
-            //        await navigationPage.PushAsync(page);
-            //    }
-            //    else
-            //    {
-            //        CurrentApplication.MainPage = new BethanyNavigationPage(page);
-            //    }
-            //}
-
+        
              App.Nav.PushAsync(page);
 
             await (page.BindingContext as BaseViewModel).InitializeAsync(parameter);
@@ -160,6 +136,9 @@ namespace STOCI.App
             _mappings.Add(typeof(MainPageViewModel), typeof(MainPageView));
             _mappings.Add(typeof(DirectoryViewModel), typeof(DirectoryView));
             _mappings.Add(typeof(ContactViewModel), typeof(ContactView));
+            _mappings.Add(typeof(MyProfileViewModel), typeof(MyProfileView));
+            _mappings.Add(typeof(EditProfileViewModel), typeof(EditProfileView));
+
             //_mappings.Add(typeof(HomeViewModel), typeof(HomeView));
             //_mappings.Add(typeof(CheckoutViewModel), typeof(CheckoutView));
             //_mappings.Add(typeof(ContactViewModel), typeof(ContactView));

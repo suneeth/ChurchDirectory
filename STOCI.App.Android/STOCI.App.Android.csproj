@@ -62,6 +62,8 @@
     <Compile Include="NoBorderSearchBar.cs" />
     <Compile Include="TabIconHelpers\FontDrawable.cs" />
     <Compile Include="TabIconHelpers\IconPageRenderer.cs" />
+    <Compile Include="CustomNavigationPageRenderer.cs" />
+    <Compile Include="ViewGroupExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -85,6 +87,10 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_close_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_close_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_close_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_close_white_24.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

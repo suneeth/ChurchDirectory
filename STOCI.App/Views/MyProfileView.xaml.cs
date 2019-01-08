@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace STOCI.App
 {
-    public partial class MyProfile : ContentPage,ITabPage
+    public partial class MyProfileView : ContentPage,ITabPage
     {
-        public MyProfile()
+        public MyProfileView()
         {
             InitializeComponent();
         }

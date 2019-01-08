@@ -4,6 +4,8 @@
              x:Class="STOCI.App.OurChurch" Title="Our Church" 
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true" >
+
+    <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -12,7 +14,6 @@
                 <RowDefinition Height="3*"></RowDefinition>
 
             </Grid.RowDefinitions>
-            <Label Text="Our Church" Margin="10" HorizontalTextAlignment="Center"></Label>
             <Image Source="http://www.stthomasdetroit.org/wp-content/uploads/2017/01/584901096_4s6bn-L.jpg" Aspect="Fill" Grid.Row="1"></Image>
         <StackLayout Orientation="Vertical"  Grid.Row="2"> 
           <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
@@ -20,4 +21,5 @@
              <Label Text="St Thomas Orthodox Church Warren MI" HorizontalTextAlignment="Start" Margin="10" Style="{StaticResource RegularStyle}"></Label>
         </StackLayout>
     </Grid>
+        </ContentPage.Content>
 </ContentPage>

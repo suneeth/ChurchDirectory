@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-            xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView">
+            xmlns:local="clr-namespace:STOCI.App" x:Class="STOCI.App.MainPageView"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
     
-    <local:OurChurch></local:OurChurch>
-    <local:Organizations></local:Organizations>
+     <NavigationPage Title="Our Church">
+        <x:Arguments>
+           <local:OurChurch></local:OurChurch>
+        </x:Arguments>
+    </NavigationPage>
+    
+  
     <NavigationPage Title="Directory">
         <x:Arguments>
            <local:DirectoryView></local:DirectoryView>
         </x:Arguments>
     </NavigationPage>
-    <local:MyProfile></local:MyProfile>
+    
+        <NavigationPage Title="Organizations">
+        <x:Arguments>
+          <local:Organizations></local:Organizations>
+        </x:Arguments>
+    </NavigationPage>
+    
+      <NavigationPage Title="My Profile">
+        <x:Arguments>
+         <local:MyProfileView></local:MyProfileView>
+        </x:Arguments>
+    </NavigationPage>
     
  </TabbedPage>

@@ -98,6 +98,7 @@
     <Compile Include="NoBorderSearchBarControl.cs" />
     <Compile Include="TabIconHelpers\ImageHelper.cs" />
     <Compile Include="TabIconHelpers\TabbedPageRenderer.cs" />
+    <Compile Include="CustomPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
