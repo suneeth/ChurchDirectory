@@ -14,13 +14,16 @@
                 <Image Source="http://www.mailsandforwards.com/wp-content/uploads/beautiful-family-poem.jpg" Aspect="AspectFit"></Image>
             </ContentView>
             <StackLayout Grid.Row="1" Padding="10">
-                    <Entry Text="{Binding SelectedContact.FullName}" 
+                   <Label Text="Full Name:" ></Label>
+
+                    <Entry Text="{Binding SelectedContact.FullName,Mode=TwoWay}" 
                            Style="{StaticResource PageHeaderStyle}">
                     </Entry>
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                 <StackLayout Orientation="Horizontal">
+                    <Label Text="Phone Number:" ></Label>
                     <Entry 
-                           Text="{Binding SelectedContact.PhoneNumber}" 
+                           Text="{Binding SelectedContact.PhoneNumber,Mode=TwoWay}" 
                            FontSize="{StaticResource SmallFontSize}" 
                            >
                     </Entry>
@@ -29,8 +32,9 @@
             <BoxView BackgroundColor="{StaticResource PlainGrey}" HeightRequest=".5" HorizontalOptions="FillAndExpand" />
                 
                 <StackLayout Orientation="Horizontal" >
+                <Label Text="Address:" ></Label>
 
-                  <Entry Text="{Binding SelectedContact.Address}" 
+                  <Entry Text="{Binding SelectedContact.Address,Mode=TwoWay}" 
                          FontSize="{StaticResource SmallFontSize}" 
                          >
                   </Entry>              

@@ -63,9 +63,9 @@ namespace STOCI.App
             return InternalNavigateToAsync(viewModelType, parameter);
         }
 
-        public Task ShowModalAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase
+        public Task ShowModalAsync(Type viewModelType, object parameter) 
         {
-            return InternalShowModalAsync(typeof(TViewModel), parameter);
+            return InternalShowModalAsync(viewModelType, parameter);
         }
 
         public Task PopToRootAsync()
@@ -82,7 +82,7 @@ namespace STOCI.App
         protected virtual async Task InternalShowModalAsync(Type viewModelType, object parameter)
         {
             var page = CreatePage(viewModelType, parameter);
-            await App.Nav.PushModalAsync(new NavigationPage(page));
+             await App.Nav.PushModalAsync(new NavigationPage(page));
             await (page.BindingContext as BaseViewModel).InitializeAsync(parameter);
 
         }

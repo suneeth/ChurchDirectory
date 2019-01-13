@@ -59,7 +59,7 @@ namespace STOCI.App
 
         private void EditUser()
         {
-            _navigationService.ShowModalAsync<EditProfileViewModel>(_selectedContact);
+            _navigationService.ShowModalAsync(typeof(EditProfileViewModel),SelectedContact);
         }
 
     }

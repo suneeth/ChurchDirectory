@@ -12,7 +12,7 @@ namespace STOCI.App
 
         Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase;
 
-        Task ShowModalAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase;
+        Task ShowModalAsync(Type viewModelType,object parameter);
 
         Task NavigateToAsync(Type viewModelType);
 
